@@ -253,64 +253,70 @@ nav .dropdown:hover .dropdown-menu {
     box-shadow: 0 6px 15px rgba(0, 0, 0, 0.3);
 }
 
+/* Root Variables */
 :root {
-    --primary-color: #6200ea;
-    --secondary-color: #f4f4f9;
-    --highlight-color: #e8e8ff;
-    --text-color: #333;
-    --hover-scale: 1.1;
-    --button-padding: 15px 25px;
-    --box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-    --hover-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
-    --font-size: 1rem;
-    --border-radius: 20px;
+    --primary-color: #6200ea; /* Main color used for primary elements */
+    --secondary-color: #f4f4f9; /* Background color for secondary elements */
+    --highlight-color: #e8e8ff; /* Highlight color for gradients */
+    --text-color: #333; /* Default text color */
+    --hover-scale: 1.1; /* Scale factor for hover effects */
+    --button-padding: 15px 25px; /* Padding for buttons and similar elements */
+    --box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* Default box shadow */
+    --hover-shadow: 0 6px 12px rgba(0, 0, 0, 0.15); /* Box shadow on hover */
+    --font-size: 1rem; /* Default font size */
+    --border-radius: 20px; /* Border radius for elements */
 }
 
+/* Skills Section */
 .skills {
-    background: #fff;
-    padding: 40px 20px;
-    margin: 40px 0;
-    border-radius: 15px;
-    box-shadow: var(--box-shadow);
-    display: flex;
-    flex-direction: column;
-    align-items: center;
+    background: #fff; /* White background */
+    padding: 40px 20px; /* Padding for the section */
+    margin: 40px 0; /* Margin around the section */
+    border-radius: 15px; /* Rounded corners */
+    box-shadow: var(--box-shadow); /* Default box shadow */
+    display: flex; /* Flexbox layout */
+    flex-direction: column; /* Column layout */
+    align-items: center; /* Center align items */
 }
 
+/* Skills Heading */
 .skills h2 {
-    font-size: 2.2rem;
-    color: var(--primary-color);
-    margin-bottom: 25px;
-    text-align: center;
-    font-weight: 600;
+    font-size: 2.2rem; /* Larger font size for heading */
+    color: var(--primary-color); /* Primary color for heading */
+    margin-bottom: 25px; /* Spacing below the heading */
+    text-align: center; /* Center align text */
+    font-weight: 600; /* Semi-bold font weight */
 }
 
+/* Skills List */
 .skills ul {
-    list-style: none;
-    padding: 0;
-    margin: 0;
-    display: flex;
-    flex-wrap: wrap;
-    gap: 25px;
-    justify-content: center;
+    list-style: none; /* Remove default list style */
+    padding: 0; /* Remove default padding */
+    margin: 0; /* Remove default margin */
+    display: flex; /* Flexbox layout for list items */
+    flex-wrap: wrap; /* Wrap items to the next line */
+    gap: 25px; /* Spacing between items */
+    justify-content: center; /* Center align items */
 }
 
+/* Individual Skill Items */
 .skills li {
-    background: linear-gradient(135deg, var(--highlight-color), var(--secondary-color));
-    padding: var(--button-padding);
-    border-radius: var(--border-radius);
-    font-size: var(--font-size);
-    font-weight: 600;
-    color: var(--text-color);
-    box-shadow: var(--box-shadow);
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-    text-align: center;
-    min-width: 150px;
+    background: linear-gradient(135deg, var(--highlight-color), var(--secondary-color)); /* Gradient background */
+    padding: var(--button-padding); /* Padding for list items */
+    border-radius: var(--border-radius); /* Rounded corners */
+    font-size: var(--font-size); /* Default font size */
+    font-weight: 600; /* Semi-bold font weight */
+    color: var(--text-color); /* Default text color */
+    box-shadow: var(--box-shadow); /* Default box shadow */
+    transition: transform 0.3s ease, box-shadow 0.3s ease; /* Smooth transition for transform and box shadow */
+    text-align: center; /* Center align text */
+    min-width: 150px; /* Minimum width for list items */
 }
 
+/* Hover Effects for Skill Items */
 .skills li:hover {
-    transform: scale(var(--hover-scale));
-    box-shadow: var(--hover-shadow);
+    transform: scale(var(--hover-scale)); /* Scale up on hover */
+    box-shadow: var(--hover-shadow); /* Stronger box shadow on hover */
 }
 
 
@@ -641,6 +647,7 @@ footer p {
     --intro-font-size: 1.2rem;
 }
 
+/* About Section Styles */
 .about-section {
     padding: 100px 20px;
     text-align: center;
@@ -652,6 +659,7 @@ footer p {
     animation: fadeInUp 1.5s ease-out, rotateBg 15s linear infinite;
 }
 
+/* Overlay for Background */
 .about-section::before {
     content: "";
     position: absolute;
@@ -664,6 +672,7 @@ footer p {
     animation: fadeInUp 2s ease-out;
 }
 
+/* Content Container */
 .about-content {
     position: relative;
     z-index: 1;
@@ -681,6 +690,7 @@ footer p {
     box-shadow: var(--box-shadow-hover);
 }
 
+/* Section Heading */
 .about-section h2 {
     font-size: var(--heading-font-size);
     margin-bottom: 20px;
@@ -688,7 +698,7 @@ footer p {
     letter-spacing: 2px;
     color: var(--text-color-light);
     animation: slideInLeft 1s ease-out;
-    transition: color var(--transition-duration);
+    transition: color var(--transition-duration), transform var(--transition-duration);
 }
 
 .about-section h2:hover {
@@ -696,6 +706,7 @@ footer p {
     transform: scale(1.05);
 }
 
+/* Intro Text */
 .about-section .intro {
     font-size: var(--intro-font-size);
     line-height: 1.8;
@@ -710,6 +721,31 @@ footer p {
     color: var(--primary-bg-color);
     transform: translateY(-5px);
 }
+
+/* Keyframes for Animations */
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+
+
+@keyframes scaleUp {
+    from {
+        transform: scale(0.9);
+    }
+    to {
+        transform: scale(1);
+    }
+}
+
+
 
 
 .social-links {
@@ -788,266 +824,6 @@ footer p {
     }
 }
 
-:root {
-    --primary-color: #6200ea;
-    --secondary-color: #3700b3;
-    --hover-scale: 1.05;
-    --box-shadow-light: 0 8px 20px rgba(0, 0, 0, 0.1);
-    --box-shadow-hover: 0 12px 30px rgba(0, 0, 0, 0.2);
-    --font-color-dark: #555;
-    --font-color-light: #fff;
-    --font-size-medium: 1.5rem;
-    --font-size-small: 1rem;
-    --border-radius: 10px;
-    --button-radius: 25px;
-    --padding: 10px 20px;
-}
 
-.blog {
-    background: #f8f8f8;
-    padding: 60px 20px;
-    margin: 40px 0;
-    border-radius: 15px;
-    box-shadow: var(--box-shadow-light);
-}
-
-.blog h2 {
-    font-size: 2.5rem;
-    text-align: center;
-    color: var(--primary-color);
-    margin-bottom: 40px;
-    text-transform: uppercase;
-    letter-spacing: 2px;
-}
-
-.blog-posts {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 30px;
-    justify-content: center;
-}
-
-.blog-post {
-    background: #fff;
-    border-radius: var(--border-radius);
-    box-shadow: var(--box-shadow-light);
-    width: 300px;
-    overflow: hidden;
-    text-align: left;
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-}
-
-.blog-post:hover {
-    transform: translateY(-10px);
-    box-shadow: var(--box-shadow-hover);
-}
-
-.blog-post img {
-    width: 100%;
-    height: 200px;
-    object-fit: cover;
-    border-bottom: 5px solid var(--primary-color);
-    transition: transform 0.3s ease;
-}
-
-.blog-post img:hover {
-    transform: scale(var(--hover-scale));
-}
-
-.blog-post .post-content {
-    padding: 20px;
-}
-
-.blog-post .post-content h3 {
-    font-size: var(--font-size-medium);
-    margin: 0 0 15px;
-    color: var(--primary-color);
-    transition: color 0.3s ease;
-}
-
-.blog-post .post-content h3 a {
-    text-decoration: none;
-    color: var(--primary-color);
-}
-
-.blog-post .post-content h3 a:hover {
-    color: var(--secondary-color);
-}
-
-.blog-post .post-content p {
-    font-size: var(--font-size-small);
-    color: var(--font-color-dark);
-    margin-bottom: 15px;
-}
-
-.blog-post .read-more {
-    display: inline-block;
-    text-decoration: none;
-    background: var(--primary-color);
-    color: var(--font-color-light);
-    padding: var(--padding);
-    border-radius: var(--button-radius);
-    transition: background 0.3s, transform 0.3s;
-}
-
-.blog-post .read-more:hover {
-    background: var(--secondary-color);
-    transform: scale(var(--hover-scale));
-}
-
-
-/* Article Page Specific Styles */
-/* All Part of Style Wrote by Muhammad Noraeii */
-/* Enjoy a Perfect Style! */
-
-:root {
-    --primary-bg-color: rgba(0, 30, 255, 0.142);
-    --primary-color: #ff0000;
-    --secondary-color: #ccc;
-    --hover-scale: 1.05;
-    --box-shadow-light: 0 4px 6px rgba(3, 244, 63, 0.1);
-    --box-shadow-image: 0 4px 10px rgba(0, 0, 0, 0.1);
-    --box-shadow-content: 0 8px 15px rgba(0, 0, 0, 0.1);
-    --font-size-large: 3rem;
-    --font-size-medium: 1.2rem;
-    --font-size-small: 1.1rem;
-    --font-size-xsmall: 0.9rem;
-    --font-size-xxlarge: 4rem;
-    --border-radius: 15px;
-    --font-family: 'Times New Roman', Times, serif;
-    --font-family-alt: 'Arial', sans-serif;
-    --primary-btn-bg: #6200ea;
-    --secondary-btn-bg: #3700b3;
-    --btn-hover-scale: 1.1;
-    --btn-padding: 10px 20px;
-}
-
-.article-header {
-    background: var(--primary-bg-color);
-    color: var(--primary-color);
-    padding: 50px 20px;
-    box-shadow: var(--box-shadow-light);
-    animation: fadeInUp 1.5s ease-out;
-}
-
-.article-header .article-title {
-    font-size: var(--font-size-large);
-    color: var(--primary-color);
-    text-transform: uppercase;
-    letter-spacing: 2px;
-    margin-bottom: 20px;
-}
-
-.article-header .article-date, 
-.article-header .article-author {
-    font-size: var(--font-size-small);
-    color: var(--secondary-color);
-    margin-top: 10px;
-}
-
-.article-body {
-    background-color: #fff;
-    padding: 40px 20px;
-    margin-top: 20px;
-    border-radius: var(--border-radius);
-    box-shadow: var(--box-shadow-content);
-    animation: fadeInUp 1.5s ease-in-out;
-}
-
-.article-image {
-    width: 100%;
-    height: 400px;
-    margin-bottom: 30px;
-    border-radius: var(--border-radius);
-    overflow: hidden;
-    box-shadow: var(--box-shadow-image);
-}
-
-.article-image img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    transition: transform 0.3s ease;
-}
-
-.article-image img:hover {
-    transform: scale(var(--hover-scale));
-}
-
-.article-content p {
-    font-size: var(--font-size-medium);
-    line-height: 1.5;
-    color: #555;
-    margin-bottom: 20px;
-    text-align: justify;
-    font-weight: normal;
-    font-family: var(--font-family);
-}
-
-.article-content p:last-child {
-    margin-bottom: 0;
-}
-
-.article-content a {
-    color: var(--primary-color);
-    text-decoration: none;
-    transition: color 0.3s ease;
-}
-
-.article-content a:hover {
-    color: var(--secondary-color);
-    text-decoration: underline;
-}
-
-.article-footer {
-    background-color: var(--primary-bg-color);
-    padding: 30px 20px;
-    text-align: center;
-    box-shadow: 0 -4px 6px rgba(0, 0, 0, 0.1);
-}
-
-.article-footer p {
-    font-size: var(--font-size-small);
-    color: #fff;
-    margin-bottom: 10px;
-    font-family: var(--font-family-alt);
-}
-
-.article-footer .social-icons {
-    display: flex;
-    justify-content: center;
-    gap: 15px;
-    margin-top: 15px;
-}
-
-.article-footer .social-icons a {
-    font-size: 1.5rem;
-    color: #fff;
-    transition: transform 0.3s ease;
-}
-
-.article-footer .social-icons a:hover {
-    transform: scale(1.2);
-}
-
-.article-btn {
-    display: inline-block;
-    background-color: var(--primary-btn-bg);
-    color: #fff;
-    padding: var(--btn-padding);
-    border-radius: var(--border-radius);
-    text-decoration: none;
-    font-size: var(--font-size-small);
-    transition: transform 0.3s ease, background-color 0.3s ease;
-}
-
-.article-btn:hover {
-    transform: scale(var(--btn-hover-scale));
-    background-color: var(--secondary-btn-bg);
-}
-
-.article-btn:active {
-    transform: scale(1);
-}
 
 /*End of the code!*/

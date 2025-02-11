@@ -1,0 +1,398 @@
+/*
+Code wrote by Muhammad Noraeii
+*/
+/* Muhammad.Noraeii@gmail.com*/
+/* GitHub : https://github.com/Muhammad-Noraeii */
+/* =================================
+   Table of Contents
+   =================================
+   1. General Styles
+   2. Header Styles
+   3. Hero Section Styles
+   4. About Section Styles
+   5. Projects Section Styles
+   6. Contact Section Styles
+   7. Footer Styles
+   8. Media Queries
+   9. Reveal Styles
+   10. Project Details Styles
+*/
+
+/* =================================
+   1. General Styles
+   ================================= */
+   body {
+    font-family: 'Roboto', sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f8f9fa; /* Lighter background */
+    color: #343a40; /* Darker text color */
+    line-height: 1.7; /* Increased line height */
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    overflow-x: hidden;
+}
+
+a {
+    color: #007bff;
+    text-decoration: none;
+    transition: color 0.3s ease; /* Removed box-shadow transition */
+}
+
+a:hover {
+    color: #0056b3;
+    /* Removed box-shadow on hover */
+}
+
+/* =================================
+   2. Header Styles
+   ================================= */
+header {
+    background-color: #fff;
+    color: #343a40;
+    padding: 1.2rem 0; /* Increased padding */
+    border-bottom: 1px solid #dee2e6; /* Slightly darker border */
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.08);
+    position: sticky;
+    top: 0;
+    z-index: 100;
+}
+
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 2.5rem; /* Increased padding */
+}
+
+.logo {
+    font-size: 1.7rem; /* Increased font size */
+    font-weight: 600; /* Semi-bold */
+    letter-spacing: 0.05rem; /* Slight letter spacing */
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+}
+
+nav ul li {
+    margin-left: 1.5rem; /* Increased spacing */
+}
+
+nav ul li a {
+    color: #495057; /* Muted color */
+    display: block;
+    padding: 0.6rem 0; /* Increased padding */
+    transition: color 0.3s ease, transform 0.3s ease; /* Smooth transition */
+    position: relative; /* For underline effect */
+}
+
+nav ul li a:hover {
+    color: #007bff;
+    transform: translateY(-2px); /* Subtle lift */
+}
+
+/* Underline effect on hover */
+nav ul li a::after {
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 2px;
+    bottom: 0;
+    left: 0;
+    background-color: #007bff;
+    transition: width 0.3s ease;
+}
+
+nav ul li a:hover::after {
+    width: 100%;
+}
+
+/* =================================
+   3. Hero Section Styles
+   ================================= */
+#hero {
+    padding: 5rem 0; /* Increased padding */
+    text-align: center;
+}
+
+.hero-content {
+    max-width: 850px; /* Wider content area */
+    margin: 0 auto;
+    padding: 0 2.5rem; /* Increased padding */
+}
+
+.profile-image {
+    width: 140px; /* Increased size */
+    height: 140px; /* Increased size */
+    border-radius: 50%;
+    margin-bottom: 1.2rem;
+    object-fit: cover;
+    box-shadow: 0 3px 7px rgba(0, 0, 0, 0.15); /* More defined shadow */
+    transition: box-shadow 0.3s ease, transform 0.3s ease; /* Added transform */
+}
+
+.profile-image:hover {
+    box-shadow: 0 4px 9px rgba(0, 0, 0, 0.2); /* Increased shadow on hover */
+    transform: scale(1.05); /* Slight zoom on hover */
+}
+
+.hero-content h1 {
+    font-size: 3rem; /* Increased font size */
+    margin-bottom: 0.7rem;
+    font-weight: 700; /* Bold font weight */
+    letter-spacing: -0.05rem; /* Slight letter spacing */
+}
+
+.hero-content p {
+    font-size: 1.15rem; /* Increased font size */
+    color: #6c757d; /* Muted color */
+    margin-bottom: 2rem; /* Increased spacing */
+}
+
+.cta-button {
+    background-color: #007bff;
+    color: #fff;
+    padding: 0.9rem 1.7rem; /* Increased padding */
+    border-radius: 6px; /* More rounded corners */
+    display: inline-block;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.15); /* Increased shadow */
+    transition: background-color 0.3s ease, box-shadow 0.3s ease, transform 0.3s ease; /* Added transform */
+}
+
+.cta-button:hover {
+    background-color: #ffffff;
+    box-shadow: 0 3px 7px rgba(0, 0, 0, 0.2); /* Increased shadow on hover */
+    transform: translateY(-2px); /* Slight lift on hover */
+}
+
+/* =================================
+   4. About Section Styles
+   ================================= */
+#about {
+    padding: 4rem 0; /* Increased padding */
+    text-align: center;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1); /* Slightly stronger shadow */
+}
+
+#about h2 {
+    font-size: 2.2rem; /* Increased font size */
+    margin-bottom: 1.2rem;
+    font-weight: 600; /* Semi-bold */
+}
+
+#about p {
+    font-size: 1.1rem; /* Increased font size */
+    color: #6c757d; /* Muted color */
+    max-width: 850px; /* Wider content area */
+    margin: 0 auto;
+    padding: 0 2.5rem; /* Increased padding */
+}
+
+/* =================================
+   5. Projects Section Styles
+   ================================= */
+#projects {
+    padding: 4rem 0; /* Increased padding */
+    text-align: center;
+    background-color: #fff; /* White background */
+}
+
+#projects h2 {
+    font-size: 2.2rem; /* Increased font size */
+    margin-bottom: 1.7rem; /* Increased spacing */
+    font-weight: 600; /* Semi-bold */
+}
+
+.projects-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); /* Slightly wider cards */
+    gap: 1.7rem; /* Increased spacing */
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 2.5rem; /* Increased padding */
+}
+
+.project-card {
+    background-color: #fff;
+    border: 1px solid #dee2e6; /* Slightly darker border */
+    padding: 1.4rem; /* Increased padding */
+    border-radius: 7px; /* More rounded corners */
+    text-align: left;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.12); /* More defined shadow */
+    transition: box-shadow 0.3s ease, transform 0.3s ease; /* Added transform */
+}
+
+.project-card:hover {
+    box-shadow: 0 3px 7px rgba(0, 0, 0, 0.18); /* Increased shadow on hover */
+    transform: translateY(-3px); /* Slight lift on hover */
+}
+
+.project-image {
+    width: 100%;
+    height: 160px; /* Slightly taller images */
+    object-fit: cover;
+    border-radius: 7px; /* More rounded corners */
+    margin-bottom: 1rem;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.12); /* More defined shadow */
+    transition: transform 0.3s ease; /* Smooth transition */
+}
+
+.project-card h3 {
+    font-size: 1.3rem; /* Increased font size */
+    margin-bottom: 0.6rem;
+    font-weight: 500; /* Medium font weight */
+}
+
+.project-card p {
+    font-size: 1.05rem; /* Increased font size */
+    color: #6c757d; /* Muted color */
+    margin-bottom: 1.2rem;
+}
+
+.project-card a {
+    color: #007bff;
+    display: inline-block;
+    padding: 0.5rem 1rem; /* Increased padding */
+    border-radius: 5px; /* More rounded corners */
+    background-color: #e9ecef; /* Lighter background */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.15); /* Increased shadow */
+    transition: background-color 0.3s ease, box-shadow 0.3s ease, transform 0.3s ease; /* Added transform */
+}
+
+.project-card a:hover {
+    background-color: #dee2e6; /* Slightly darker background */
+    box-shadow: 0 3px 6px rgba(0, 0, 0, 0.2); /* Increased shadow on hover */
+    transform: translateY(-2px); /* Slight lift on hover */
+}
+
+/* =================================
+   6. Contact Section Styles
+   ================================= */
+#contact {
+    padding: 4rem 0; /* Increased padding */
+    text-align: center;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1); /* Slightly stronger shadow */
+}
+
+#contact h2 {
+    font-size: 2.2rem; /* Increased font size */
+    margin-bottom: 1.2rem;
+    font-weight: 600; /* Semi-bold */
+}
+
+#contact p {
+    font-size: 1.1rem; /* Increased font size */
+    color: #6c757d; /* Muted color */
+    max-width: 850px; /* Wider content area */
+    margin: 0 auto;
+    padding: 0 2.5rem; /* Increased padding */
+}
+
+/* =================================
+   7. Footer Styles
+   ================================= */
+footer {
+    background-color: #fff;
+    color: #6c757d; /* Muted color */
+    text-align: center;
+    padding: 1rem 0; /* Increased padding */
+    border-top: 1px solid #dee2e6; /* Slightly darker border */
+    box-shadow: 0 -2px 6px rgba(0, 0, 0, 0.1); /* Slightly stronger shadow */
+}
+
+/* =================================
+   8. Media Queries
+   ================================= */
+@media (max-width: 768px) {
+    nav {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    nav ul {
+        margin-top: 0.7rem; /* Increased spacing */
+        flex-direction: column;
+    }
+
+    nav ul li {
+        margin-left: 0;
+        margin-bottom: 0.7rem; /* Increased spacing */
+    }
+
+    .projects-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .hero-content h1 {
+        font-size: 2.7rem; /* Adjusted font size */
+    }
+}
+
+/* =================================
+   9. Reveal Styles
+   ================================= */
+.reveal{
+  position: relative;
+  transform: translateY(150px);
+  opacity: 0;
+  transition: 1s all ease;
+}
+
+.reveal.active{
+  transform: translateY(0);
+  opacity: 1;
+}
+
+/* =================================
+   10. Project Details Styles
+   ================================= */
+#project-details {
+    padding: 4rem 0;
+    text-align: left;
+}
+
+.project-content {
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 0 2.5rem;
+}
+
+.project-detail-image {
+    width: 100%;
+    border-radius: 7px;
+    margin-bottom: 1.5rem;
+    box-shadow: 0 3px 7px rgba(0, 0, 0, 0.15);
+}
+
+.project-description {
+    font-size: 1.1rem;
+    color: #6c757d;
+    line-height: 1.8;
+    margin-bottom: 2rem;
+}
+
+#project-details h1,
+#project-details h2 {
+    font-weight: 600;
+    margin-bottom: 1rem;
+}
+
+#project-details ul {
+    list-style: disc;
+    padding-left: 2rem;
+    margin-bottom: 1.5rem;
+}
+
+#project-details li {
+    font-size: 1.05rem;
+    color: #6c757d;
+    margin-bottom: 0.5rem;
+}
+
+#project-details .cta-button {
+    margin-right: 1rem;
+}

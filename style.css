@@ -3,86 +3,132 @@ Code wrote by Muhammad Noraeii
 */
 /* Muhammad.Noraeii@gmail.com*/
 /* GitHub : https://github.com/Muhammad-Noraeii */
-/* =================================
+
+/* ==========================================================================
    Table of Contents
-   =================================
-   1. General Styles
-   2. Header Styles
-   3. Hero Section Styles
-   4. About Section Styles
-   5. Projects Section Styles
-   6. Contact Section Styles
-   7. Footer Styles
-   8. Media Queries
-   9. Reveal Styles
-   10. Project Details Styles
+   ==========================================================================
+   1.  Global Styles
+   2.  Layout & Structure
+   3.  Components
+        3.1 Header
+        3.2 Hero Section
+        3.3 About Section
+        3.4 Projects Section
+        3.5 Contact Section
+        3.6 Footer
+   4.  Utilities
+   5.  Project Details Styles
+   6.  Media Queries
+   7.  Reveal Styles
 */
 
-/* =================================
-   1. General Styles
-   ================================= */
-   body {
-    font-family: 'Roboto', sans-serif;
+/* ==========================================================================
+   1. Global Styles
+   ========================================================================== */
+
+:root {
+    /* Color Palette */
+    --primary-color: #007bff;
+    --primary-color-darker: #0056b3;
+    --secondary-color: #6c757d;
+    --body-bg-color: #f8f9fa;
+    --white: #fff;
+    --text-dark: #343a40;
+    --border-color: #dee2e6;
+    --card-bg-color: var(--white);
+    --link-color: var(--primary-color);
+
+    /* Font Family */
+    --main-font: 'Roboto', sans-serif;
+
+    /* Spacing */
+    --section-padding: 4rem; /* Standard padding for sections */
+    --horizontal-padding: 2.5rem;
+    --default-border-radius: 7px;
+
+    /* Shadow Values */
+    --box-shadow-sm: 0 2px 5px rgba(0, 0, 0, 0.12);
+    --box-shadow-md: 0 3px 7px rgba(0, 0, 0, 0.15);
+    --box-shadow-lg: 0 4px 9px rgba(0, 0, 0, 0.2);
+}
+
+/* General Body Styles */
+body {
+    font-family: var(--main-font);
     margin: 0;
     padding: 0;
-    background-color: #f8f9fa; /* Lighter background */
-    color: #343a40; /* Darker text color */
-    line-height: 1.7; /* Increased line height */
+    background-color: var(--body-bg-color);
+    color: var(--text-dark);
+    line-height: 1.7;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
     overflow-x: hidden;
 }
 
+/* Link Styles */
 a {
-    color: #007bff;
+    color: var(--link-color);
     text-decoration: none;
-    transition: color 0.3s ease; /* Removed box-shadow transition */
+    transition: color 0.3s ease;
 }
 
 a:hover {
-    color: #0056b3;
-    /* Removed box-shadow on hover */
+    color: var(--primary-color-darker);
 }
 
-/* =================================
-   2. Header Styles
-   ================================= */
-header {
-    background-color: #fff;
-    color: #343a40;
-    padding: 1.2rem 0; /* Increased padding */
-    border-bottom: 1px solid #dee2e6; /* Slightly darker border */
+a:focus { /*Accessibility*/
+  outline: 2px solid var(--primary-color);
+  outline-offset: 2px;
+}
+
+/* ==========================================================================
+   2. Layout & Structure
+   ========================================================================== */
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 var(--horizontal-padding);
+}
+
+/* ==========================================================================
+   3. Components
+   ========================================================================== */
+
+/* 3.1 Header */
+.header {
+    background-color: var(--white);
+    color: var(--text-dark);
+    padding: 1.2rem 0;
+    border-bottom: 1px solid var(--border-color);
     box-shadow: 0 2px 6px rgba(0, 0, 0, 0.08);
     position: sticky;
     top: 0;
     z-index: 100;
 }
 
-nav {
+.nav {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 0 2.5rem; /* Increased padding */
 }
 
 .logo {
-    font-size: 1.7rem; /* Increased font size */
-    font-weight: 600; /* Semi-bold */
-    letter-spacing: 0.05rem; /* Slight letter spacing */
+    font-size: 1.7rem;
+    font-weight: 600;
+    letter-spacing: 0.05rem;
 }
 
-nav ul {
+.nav__list {
     list-style: none;
     display: flex;
 }
 
-nav ul li {
-    margin-left: 1.5rem; /* Increased spacing */
+.nav__item {
+    margin-left: 1.5rem;
 }
 
-nav ul li a {
+.nav__link {
     color: #495057; /* Muted color */
     display: block;
     padding: 0.6rem 0; /* Increased padding */
@@ -90,266 +136,222 @@ nav ul li a {
     position: relative; /* For underline effect */
 }
 
-nav ul li a:hover {
-    color: #007bff;
-    transform: translateY(-2px); /* Subtle lift */
+.nav__link:hover {
+    color: var(--primary-color);
+    transform: translateY(-2px);
 }
 
 /* Underline effect on hover */
-nav ul li a::after {
+.nav__link::after {
     content: '';
     position: absolute;
     width: 0;
     height: 2px;
     bottom: 0;
     left: 0;
-    background-color: #007bff;
+    background-color: var(--primary-color);
     transition: width 0.3s ease;
 }
 
-nav ul li a:hover::after {
+.nav__link:hover::after {
     width: 100%;
 }
 
-/* =================================
-   3. Hero Section Styles
-   ================================= */
+/* 3.2 Hero Section */
 #hero {
-    padding: 5rem 0; /* Increased padding */
+    padding: 5rem 0;
     text-align: center;
 }
 
 .hero-content {
-    max-width: 850px; /* Wider content area */
+    max-width: 850px;
     margin: 0 auto;
-    padding: 0 2.5rem; /* Increased padding */
+    padding: 0 var(--horizontal-padding);
 }
 
 .profile-image {
-    width: 140px; /* Increased size */
-    height: 140px; /* Increased size */
+    width: 140px;
+    height: 140px;
     border-radius: 50%;
     margin-bottom: 1.2rem;
     object-fit: cover;
-    box-shadow: 0 3px 7px rgba(0, 0, 0, 0.15); /* More defined shadow */
-    transition: box-shadow 0.3s ease, transform 0.3s ease; /* Added transform */
+    box-shadow: var(--box-shadow-md);
+    transition: box-shadow 0.3s ease, transform 0.3s ease;
 }
 
 .profile-image:hover {
-    box-shadow: 0 4px 9px rgba(0, 0, 0, 0.2); /* Increased shadow on hover */
-    transform: scale(1.05); /* Slight zoom on hover */
+    box-shadow: var(--box-shadow-lg);
+    transform: scale(1.05);
 }
 
 .hero-content h1 {
-    font-size: 3rem; /* Increased font size */
+    font-size: 3rem;
     margin-bottom: 0.7rem;
-    font-weight: 700; /* Bold font weight */
-    letter-spacing: -0.05rem; /* Slight letter spacing */
+    font-weight: 700;
+    letter-spacing: -0.05rem;
 }
 
 .hero-content p {
-    font-size: 1.15rem; /* Increased font size */
-    color: #6c757d; /* Muted color */
-    margin-bottom: 2rem; /* Increased spacing */
+    font-size: 1.15rem;
+    color: var(--secondary-color);
+    margin-bottom: 2rem;
 }
 
 .cta-button {
-    background-color: #007bff;
-    color: #fff;
-    padding: 0.9rem 1.7rem; /* Increased padding */
-    border-radius: 6px; /* More rounded corners */
+    background-color: var(--primary-color);
+    color: var(--white);
+    padding: 0.9rem 1.7rem;
+    border-radius: 6px;
     display: inline-block;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.15); /* Increased shadow */
-    transition: background-color 0.3s ease, box-shadow 0.3s ease, transform 0.3s ease; /* Added transform */
+    box-shadow: var(--box-shadow-md);
+    transition: background-color 0.3s ease, box-shadow 0.3s ease, transform 0.3s ease;
 }
 
 .cta-button:hover {
-    background-color: #ffffff;
-    box-shadow: 0 3px 7px rgba(0, 0, 0, 0.2); /* Increased shadow on hover */
-    transform: translateY(-2px); /* Slight lift on hover */
+    background-color: var(--white);
+    color: var(--primary-color);
+    box-shadow: var(--box-shadow-lg);
+    transform: translateY(-2px);
 }
 
-/* =================================
-   4. About Section Styles
-   ================================= */
+/* 3.3 About Section */
 #about {
-    padding: 4rem 0; /* Increased padding */
+    padding: var(--section-padding) 0;
     text-align: center;
     box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1); /* Slightly stronger shadow */
 }
 
 #about h2 {
-    font-size: 2.2rem; /* Increased font size */
+    font-size: 2.2rem;
     margin-bottom: 1.2rem;
-    font-weight: 600; /* Semi-bold */
+    font-weight: 600;
 }
 
 #about p {
-    font-size: 1.1rem; /* Increased font size */
-    color: #6c757d; /* Muted color */
-    max-width: 850px; /* Wider content area */
+    font-size: 1.1rem;
+    color: var(--secondary-color);
+    max-width: 850px;
     margin: 0 auto;
-    padding: 0 2.5rem; /* Increased padding */
+    padding: 0 var(--horizontal-padding);
 }
 
-/* =================================
-   5. Projects Section Styles
-   ================================= */
+/* 3.4 Projects Section */
 #projects {
-    padding: 4rem 0; /* Increased padding */
+    padding: var(--section-padding) 0;
     text-align: center;
-    background-color: #fff; /* White background */
+    background-color: var(--white);
 }
 
 #projects h2 {
-    font-size: 2.2rem; /* Increased font size */
-    margin-bottom: 1.7rem; /* Increased spacing */
-    font-weight: 600; /* Semi-bold */
+    font-size: 2.2rem;
+    margin-bottom: 1.7rem;
+    font-weight: 600;
 }
 
 .projects-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); /* Slightly wider cards */
-    gap: 1.7rem; /* Increased spacing */
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    gap: 1.7rem;
     max-width: 1200px;
     margin: 0 auto;
-    padding: 0 2.5rem; /* Increased padding */
+    padding: 0 var(--horizontal-padding);
 }
 
 .project-card {
-    background-color: #fff;
-    border: 1px solid #dee2e6; /* Slightly darker border */
-    padding: 1.4rem; /* Increased padding */
-    border-radius: 7px; /* More rounded corners */
+    background-color: var(--card-bg-color);
+    border: 1px solid var(--border-color);
+    padding: 1.4rem;
+    border-radius: var(--default-border-radius);
     text-align: left;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.12); /* More defined shadow */
-    transition: box-shadow 0.3s ease, transform 0.3s ease; /* Added transform */
+    box-shadow: var(--box-shadow-sm);
+    transition: box-shadow 0.3s ease, transform 0.3s ease;
 }
 
 .project-card:hover {
-    box-shadow: 0 3px 7px rgba(0, 0, 0, 0.18); /* Increased shadow on hover */
-    transform: translateY(-3px); /* Slight lift on hover */
+    box-shadow: 0 3px 7px rgba(0, 0, 0, 0.18);
+    transform: translateY(-3px);
 }
 
 .project-image {
     width: 100%;
-    height: 160px; /* Slightly taller images */
+    height: 160px;
     object-fit: cover;
-    border-radius: 7px; /* More rounded corners */
+    border-radius: var(--default-border-radius);
     margin-bottom: 1rem;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.12); /* More defined shadow */
-    transition: transform 0.3s ease; /* Smooth transition */
+    box-shadow: var(--box-shadow-sm);
+    transition: transform 0.3s ease;
 }
 
 .project-card h3 {
-    font-size: 1.3rem; /* Increased font size */
+    font-size: 1.3rem;
     margin-bottom: 0.6rem;
-    font-weight: 500; /* Medium font weight */
+    font-weight: 500;
 }
 
 .project-card p {
-    font-size: 1.05rem; /* Increased font size */
-    color: #6c757d; /* Muted color */
+    font-size: 1.05rem;
+    color: var(--secondary-color);
     margin-bottom: 1.2rem;
 }
 
 .project-card a {
-    color: #007bff;
+    color: var(--primary-color);
     display: inline-block;
-    padding: 0.5rem 1rem; /* Increased padding */
-    border-radius: 5px; /* More rounded corners */
-    background-color: #e9ecef; /* Lighter background */
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.15); /* Increased shadow */
-    transition: background-color 0.3s ease, box-shadow 0.3s ease, transform 0.3s ease; /* Added transform */
+    padding: 0.5rem 1rem;
+    border-radius: 5px;
+    background-color: #e9ecef;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.15);
+    transition: background-color 0.3s ease, box-shadow 0.3s ease, transform 0.3s ease;
 }
 
 .project-card a:hover {
-    background-color: #dee2e6; /* Slightly darker background */
-    box-shadow: 0 3px 6px rgba(0, 0, 0, 0.2); /* Increased shadow on hover */
-    transform: translateY(-2px); /* Slight lift on hover */
+    background-color: #dee2e6;
+    box-shadow: 0 3px 6px rgba(0, 0, 0, 0.2);
+    transform: translateY(-2px);
 }
 
-/* =================================
-   6. Contact Section Styles
-   ================================= */
+/* 3.5 Contact Section */
 #contact {
-    padding: 4rem 0; /* Increased padding */
+    padding: var(--section-padding) 0;
     text-align: center;
     box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1); /* Slightly stronger shadow */
 }
 
 #contact h2 {
-    font-size: 2.2rem; /* Increased font size */
+    font-size: 2.2rem;
     margin-bottom: 1.2rem;
-    font-weight: 600; /* Semi-bold */
+    font-weight: 600;
 }
 
 #contact p {
-    font-size: 1.1rem; /* Increased font size */
-    color: #6c757d; /* Muted color */
-    max-width: 850px; /* Wider content area */
+    font-size: 1.1rem;
+    color: var(--secondary-color);
+    max-width: 850px;
     margin: 0 auto;
-    padding: 0 2.5rem; /* Increased padding */
+    padding: 0 var(--horizontal-padding);
 }
 
-/* =================================
-   7. Footer Styles
-   ================================= */
+/* 3.6 Footer */
 footer {
-    background-color: #fff;
-    color: #6c757d; /* Muted color */
+    background-color: var(--white);
+    color: var(--secondary-color);
     text-align: center;
-    padding: 1rem 0; /* Increased padding */
-    border-top: 1px solid #dee2e6; /* Slightly darker border */
+    padding: 1rem 0;
+    border-top: 1px solid var(--border-color);
     box-shadow: 0 -2px 6px rgba(0, 0, 0, 0.1); /* Slightly stronger shadow */
 }
 
-/* =================================
-   8. Media Queries
-   ================================= */
-@media (max-width: 768px) {
-    nav {
-        flex-direction: column;
-        align-items: flex-start;
-    }
-
-    nav ul {
-        margin-top: 0.7rem; /* Increased spacing */
-        flex-direction: column;
-    }
-
-    nav ul li {
-        margin-left: 0;
-        margin-bottom: 0.7rem; /* Increased spacing */
-    }
-
-    .projects-grid {
-        grid-template-columns: 1fr;
-    }
-
-    .hero-content h1 {
-        font-size: 2.7rem; /* Adjusted font size */
-    }
+/* ==========================================================================
+   4. Utilities
+   ========================================================================== */
+/* Example:  A utility class for consistent margins */
+.margin-bottom-md {
+  margin-bottom: 2rem;
 }
 
-/* =================================
-   9. Reveal Styles
-   ================================= */
-.reveal{
-  position: relative;
-  transform: translateY(150px);
-  opacity: 0;
-  transition: 1s all ease;
-}
-
-.reveal.active{
-  transform: translateY(0);
-  opacity: 1;
-}
-
-/* =================================
-   10. Project Details Styles
-   ================================= */
+/* ==========================================================================
+   5. Project Details Styles
+   ========================================================================== */
 #project-details {
     padding: 4rem 0;
     text-align: left;
@@ -363,14 +365,14 @@ footer {
 
 .project-detail-image {
     width: 100%;
-    border-radius: 7px;
+    border-radius: var(--default-border-radius);
     margin-bottom: 1.5rem;
-    box-shadow: 0 3px 7px rgba(0, 0, 0, 0.15);
+    box-shadow: var(--box-shadow-md);
 }
 
 .project-description {
     font-size: 1.1rem;
-    color: #6c757d;
+    color: var(--secondary-color);
     line-height: 1.8;
     margin-bottom: 2rem;
 }
@@ -389,10 +391,54 @@ footer {
 
 #project-details li {
     font-size: 1.05rem;
-    color: #6c757d;
+    color: var(--secondary-color);
     margin-bottom: 0.5rem;
 }
 
 #project-details .cta-button {
     margin-right: 1rem;
+}
+
+/* ==========================================================================
+   6. Media Queries
+   ========================================================================== */
+
+@media (max-width: 768px) {
+    .nav {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .nav__list {
+        margin-top: 0.7rem;
+        flex-direction: column;
+    }
+
+    .nav__item {
+        margin-left: 0;
+        margin-bottom: 0.7rem;
+    }
+
+    .projects-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .hero-content h1 {
+        font-size: 2.7rem;
+    }
+}
+
+/* ==========================================================================
+   7. Reveal Styles
+   ========================================================================== */
+.reveal{
+  position: relative;
+  transform: translateY(150px);
+  opacity: 0;
+  transition: 1s all ease;
+}
+
+.reveal.active{
+  transform: translateY(0);
+  opacity: 1;
 }
